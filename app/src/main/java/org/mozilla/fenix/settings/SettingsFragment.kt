@@ -482,9 +482,11 @@ class SettingsFragment : PreferenceFragmentCompat() {
         val enabled =
             requireComponents.backgroundServices.accountManager.authenticatedAccount() == null
         val checked = settings.useLocalFxAServer
+        val visible = Config.channel.isMozillaOnline
         preferenceUseLocalFxAServer?.apply {
             isEnabled = enabled
             isChecked = checked
+            isVisible = visible
         }
     }
 
@@ -529,6 +531,11 @@ class SettingsFragment : PreferenceFragmentCompat() {
     private fun setupUseLocalFxaServerPreference() {
         val useLocalFxAServer = getPreferenceKey(R.string.pref_key_use_local_fxa_server)
         val preferenceUseLocalFxAServer = findPreference<SwitchPreference>(useLocalFxAServer)
+        val visible = Config.channel.isMozillaOnline
+
+        preferenceUseLocalFxAServer?.apply {
+            isVisible = visible
+        }
 
         preferenceUseLocalFxAServer?.onPreferenceChangeListener =
             Preference.OnPreferenceChangeListener { preference, newValue ->
