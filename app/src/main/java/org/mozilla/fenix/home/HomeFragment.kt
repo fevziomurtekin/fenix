@@ -120,6 +120,7 @@ import org.mozilla.fenix.utils.allowUndo
 import org.mozilla.fenix.whatsnew.WhatsNew
 import java.lang.ref.WeakReference
 import kotlin.math.min
+import org.mozilla.fenix.Config
 import org.mozilla.fenix.home.mozonline.showPrivacyPopWindow
 
 @ExperimentalCoroutinesApi
@@ -180,7 +181,9 @@ class HomeFragment : Fragment() {
             }
         }
 
-        if (!onboarding.userHasBeenOnboarded() && requireContext().settings().shouldShowPrivacyPopWindow) {
+        if (!onboarding.userHasBeenOnboarded() &&
+            requireContext().settings().shouldShowPrivacyPopWindow &&
+            Config.channel.isMozillaOnline) {
             showPrivacyPopWindow(requireContext(), requireActivity())
         }
     }
