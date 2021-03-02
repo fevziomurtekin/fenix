@@ -216,4 +216,9 @@
     <dimen name="accessibility_min_height">48dp</dimen>
 
     <dimen name="tap_increase_16">16dp</dimen>
+
+    <!-- Onboarding/Tip learn more -->
+    <dimen name="onboarding_learn_more_height">48dp</dimen>
+    <dimen name="tip_learn_more_height">48dp</dimen>
+
 </resources>

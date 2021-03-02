@@ -40,7 +40,7 @@
     <org.mozilla.fenix.utils.LinkTextView
         android:id="@+id/learn_more"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/onboarding_learn_more_height"
         android:layout_marginTop="6dp"
         android:text="@string/onboarding_manual_sign_in_learn_more"
         android:textAppearance="@style/Header16TextStyle"
